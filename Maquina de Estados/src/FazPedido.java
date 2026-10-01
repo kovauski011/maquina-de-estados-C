@@ -9,7 +9,7 @@ public class FazPedido extends AbstractState<Cliente> {
 
     @Override
     public void enter() {
-        Prato[] cardapio = Prato.values();
+        Prato[] cardapio = Prato.values(); //pega a lista de "Pratos" e escolhe um randomicamente
         Prato escolhido = cardapio[random.nextInt(cardapio.length)];
 
         Pedido pedido = new Pedido(escolhido);
@@ -24,7 +24,7 @@ public class FazPedido extends AbstractState<Cliente> {
         Pedido pedido = getCharacter().getRestaurante().getPedidoAtual();
         getCharacter().printStats("Esperando o pedido (" + pedido.getStatus() + ")...");
 
-        if (pedido.getStatus() == StatusPedido. ENTREGUE) {
+        if (pedido.getStatus() == StatusPedido. ENTREGUE) { //se o status do pedido for "ENTREGUE"
             getCharacter().setState(new Come(getCharacter()));
         }
     }

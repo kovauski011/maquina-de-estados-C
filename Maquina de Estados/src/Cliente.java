@@ -46,7 +46,7 @@ public class Cliente implements Character {
     }
 
     @Override
-    public void printStats(String estado) {
+    public void printStats(String estado) { //print pra casa estado
         System.out.println("\n CLIENTE");
         System.out.println(estado);
         System.out.println("Fome: " + fome);

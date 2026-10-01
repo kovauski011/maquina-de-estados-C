@@ -7,6 +7,7 @@ public class AnotaPedido extends AbstractState<Cozinheiro> {
     public void execute() {
         Restaurante restaurante = getCharacter().getRestaurante();
 
+        //verifica se o cliente fez algum pedido
         if (restaurante.temPedido() && restaurante.getPedidoAtual().getStatus() == StatusPedido.FEITO) {
             restaurante.getPedidoAtual().setStatus(StatusPedido.ANOTADO);
             getCharacter().printStats("Pedido anotado! ");
